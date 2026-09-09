@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Finder</title>
+    <title>{{ site_name }}</title>
 </head>
 <body>
     <nav>
@@ -13,5 +13,16 @@
     <h1>All tracks</h1>
     <p>We love tracks, just like you!<br> 
 So here are some of our favourites!</p>
+    <ol> 
+    {% for track in tracks %} 
+        <li>
+        {{ track.name }} - {{ track.length }} km
+        {% for i in range(track.stars) %}★{% endfor %} 
+        {% if track.grade == "Hard" %}
+            <strong>(challenging)</strong>
+        {% endif %}
+        </li> 
+    {% endfor %} 
+    </ol> 
 </body>
 </html>

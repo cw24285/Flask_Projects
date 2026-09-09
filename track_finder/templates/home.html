@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Finder</title>
+    <title>{{ site_name }}</title>
 </head>
 <body>
     <nav>
@@ -12,5 +12,11 @@
     </nav>
     <h1>Track Finder</h1>
     <p>Walking tracks around Auckland.</p>
+    <p>There is currently:</p>
+        {% if count > 3 %} 
+    <p>Plenty to choose from.</p> 
+        {% else %}
+    <p>Only a few for now.</p> 
+        {% endif %} 
 </body>
 </html>
