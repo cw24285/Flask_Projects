@@ -5,10 +5,14 @@ app = Flask(__name__)
 site_name = "Track Finder"
 
 tracks = [
-    {"name": "Mount Eden Loop", "length": 2.0, "grade": "Easy", "stars": 2}, 
-    {"name": "Coast to Coast Walkway", "length": 16.0, "grade": "Medium", "stars": 3}, 
-    {"name": "Karekare Falls", "length": 3.5, "grade": "Easy", "stars": 1}, 
-    {"name": "Hillary Trail", "length": 70.0, "grade": "Hard", "stars": 5} 
+    {"name": "Mount Eden Loop", "length": 2.0, "grade": "Easy", "stars": 2,
+     "image": "images/MountEdenLoop.png"}, 
+    {"name": "Coast to Coast Walkway", "length": 16.0, "grade": "Medium", "stars": 3,
+     "image": "images/coasttocoast.png"}, 
+    {"name": "Karekare Falls", "length": 3.5, "grade": "Easy", "stars": 1,
+      "image": "images/karekare.png"}, 
+    {"name": "Hillary Trail", "length": 70.0, "grade": "Hard", "stars": 5,
+     "image": "images/hillary.png"} 
 ]
 
 @app.route("/")
