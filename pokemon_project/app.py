@@ -13,9 +13,9 @@ def get_db():
 @app.route("/pokemon")
 def pokemon():
     conn = get_db()
-    p = conn.execute("SELECT * FROM pokemon").fetchall()
+    pokemon = conn.execute("SELECT * FROM pokemon LIMIT 20").fetchall()
     conn.close
-    return render_template("pokemon.html", p=p)
+    return render_template("pokemon.html", pokemon=pokemon)
 
 if __name__ == "__main__":
     app.run(debug=True)
