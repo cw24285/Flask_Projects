@@ -7,6 +7,28 @@
     margin: auto;
 }
 
+header h1 {
+    font-size: 48px;
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 20px;
+}
+
+main {
+    margin-top: 50px;
+}
+
+body{
+    margin: 0;
+}
+
 .seperate_cards {
     display: flex;
     flex-direction: column;
@@ -15,6 +37,11 @@
     padding-right: 10px;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
+}
+
+.seperate_cards img {
+    width: 120px;
+    height: 120px;
 }
 
 .grass {
@@ -34,7 +61,7 @@
 }
 
 .normal {
-    background-color: beige;
+    background-color: rgb(229, 229, 170);
 }
 
 .poison {
@@ -79,10 +106,15 @@
 
 .dark {
     background-color: rgb(31, 31, 31);
+    color: white;
 }
 
 .steel {
     background-color: rgb(189, 189, 189);
+}
+
+.flying {
+    background-color: rgb(166, 212, 230);
 }
 .seperate_cards * {
     margin: 5px;
@@ -90,4 +122,59 @@
 
 .pokemon_name {
     margin-top: 20px;
+}
+
+.favourite_pokemon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.favourite_pokemon h2 {
+    font-size: 72px;
+}
+
+.favourite_pokemon img {
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+    background-color: red;
+    animation: colorChange 10s infinite ;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: #ff0008;
+    }
+    10% {
+        background-color: #ffee00;
+    }
+    20% {
+        background-color: #2bff00;
+    }
+    30% {
+        background-color: #00ffee;
+    }
+    40% {
+        background-color: #0400ff;
+    }
+    50% {
+        background-color: #ff00ff;
+    }
+    60% {
+        background-color: #0400ff;
+    }
+    70% {
+        background-color: #00ffee;
+    }
+    80% {
+        background-color: #2bff00;
+    }
+    90% {
+        background-color: #ffee00;
+    }
+    100% {
+        background-color: #ff0000;
+    }
 }

@@ -8,19 +8,25 @@
 </head>
 <body>
     <header>
-
+        <h1>This is a wonderful pokedex.</h1>
     </header>
     <main>
-        <h1>This is a wonderful page.</h1>
         <div class="cards">
             {% for p in pokemon %}
             <div class="seperate_cards {{ p.Type1|lower }}">
                 <h3 class="pokemon_name">{{ p.Name|title }}</h3>
                 <h3>{{ p.Type1 }} {% if p.Type2 != None %} {{ p.Type2 }} {% endif %}</h3>
-                <img src="{{ url_for('static', filename='pokemon_images/' ~ p.Name ~ '.png') }}" alt="{{ p.Name }}">
+                <a href="/pokemon/{{ p.Name|lower }}">
+                    <img src="{{ url_for('static', filename='pokemon_images/' ~ p.Name ~ '.png') }}" alt="{{ p.Name }}">
+                </a>
             </div>
             {% endfor %}
         </div class="cards">
+        <div class="favourite_pokemon">
+            <h2>My Favourite Pokemon</h2>
+            <img src="{{ url_for('static', filename='favorite_pokemon_images/' ~ 'dreepy' ~ '.png') }}" alt="dreepy">
+            <h2>Dreepy</h2>
+        </div>
     </main>
     <footer>
 
