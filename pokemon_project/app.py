@@ -13,7 +13,7 @@ def get_db():
 @app.route("/pokemon")
 def pokemon():
     conn = get_db()
-    pokemon = conn.execute("SELECT * FROM pokemon LIMIT 20").fetchall()
+    pokemon = conn.execute("SELECT * FROM pokemon").fetchall()
     conn.close
     return render_template("pokemon.html", pokemon=pokemon)
 

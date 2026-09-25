@@ -14,9 +14,11 @@
         <h1>This is a wonderful page.</h1>
         <div class="cards">
             {% for p in pokemon %}
-            
-            <h3>{{ p.Name|title }} - {{ p.Type1 }} {% if p.Type2 != "None" %} {{ p.Type2 }} {% endif %}</h3>
-            <img src="{{ url_for('static', filename='pokemon_images/' ~ p.Name ~ '.png') }}" alt="{{ p.Name }}">
+            <div class="seperate_cards {{ p.Type1|lower }}">
+                <h3 class="pokemon_name">{{ p.Name|title }}</h3>
+                <h3>{{ p.Type1 }} {% if p.Type2 != None %} {{ p.Type2 }} {% endif %}</h3>
+                <img src="{{ url_for('static', filename='pokemon_images/' ~ p.Name ~ '.png') }}" alt="{{ p.Name }}">
+            </div>
             {% endfor %}
         </div class="cards">
     </main>
