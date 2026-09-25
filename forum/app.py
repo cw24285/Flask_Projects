@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request, url_for
 import sqlite3
 
 app = Flask (__name__)
@@ -27,6 +27,17 @@ def forum():
     posts = conn.execute("SELECT * FROM posts ORDER BY post_id DESC").fetchall()
     conn.close()
     return render_template("forum.html", posts = posts)
+
+@app.route("/post", methods=["POST"]) 
+def new_post(): 
+    author = request.form.get("author")
+    message = request.form.get("message")
+    conn = get_db() 
+    conn.execute("INSERT INTO posts (author, message) VALUES (?, ?)", 
+                 (author, message)) 
+    conn.commit() 
+    conn.close() 
+    return redirect(url_for("forum"))
 
 @app.route("/")
 def redirect_to_forum():
